@@ -135,12 +135,13 @@ def load_books_tags(catalog, filename):
     :returns: Tamaño del conjunto de tags de los libros
     :rtype: int
     """
-    # TODO: Mods Lab 1, integrar vista y logica
-    # Implemente una función que cargue los tags de los libros en el catalogo.
-    # La función debe recibir el catalogo y el nombre del archivo csv con los tags de los libros.
-    # La función debe cargar los tags de los libros del archivo y los agregar al conjunto book_tags del catalogo.
-    # La función debe retornar el tamaño del conjunto de tags de los libros.
-    pass
+    tags = catalog["tags"]
+    tagsfile = os.path.join(data_dir, filename)
+    catalog["tags"] = set.load_set(tags, tagsfile)
+    if empty_tags(catalog):
+        return 0
+    else:
+        return tag_size(catalog)
 
 # Funciones de consulta
 
