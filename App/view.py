@@ -130,7 +130,7 @@ def main():
         elif int(inputs[0]) == 3:
             print("Cargando informacion de tags de libros....")
             book_tags = load_books_tags(app)
-            print("Total de book tags cargados: " + str(book_tags) + "\n")
+            print("Total de tags de libros cargados: " + str(book_tags) + "\n")
 
         elif int(inputs[0]) == 0:
             working = False
